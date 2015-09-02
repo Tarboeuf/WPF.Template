@@ -1,0 +1,11 @@
+﻿<Window x:Class="WpfTemplate.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:wpfTemplateLib="clr-namespace:WpfTemplateLib;assembly=WpfTemplateLib"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <StackPanel>
+            <wpfTemplateLib:TaSlider Margin="10" Value="5" ValueChanged="Slider_ValueChanged"  />
+        </StackPanel>
+    </Grid>
+</Window>
