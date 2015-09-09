@@ -5,7 +5,7 @@
 
     <!--other resources can be here-->
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="Colors.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/WpfTemplateLib;component/Themes/Colors.xaml" />
     </ResourceDictionary.MergedDictionaries>
     <wpfTemplateLib:TrackPositionConverter x:Key="TrackPositionConverter" />
 

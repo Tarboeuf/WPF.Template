@@ -5,7 +5,22 @@
 
     <!--other resources can be here-->
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="Slider.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/WpfTemplateLib;component/Themes/Slider.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
+
+    <Style TargetType="{x:Type local:Notification}">
+        <Setter Property="Height" Value="0"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:Notification}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Height="{TemplateBinding Height}">
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>
