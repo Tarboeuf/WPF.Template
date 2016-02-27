@@ -102,7 +102,7 @@ namespace WpfTemplateLib
         /// </summary>
         public INotifyCollectionChanged Notifications
         {
-            get { return (ObservableCollection<object>)GetValue(NotificationsProperty); }
+            get { return (INotifyCollectionChanged)GetValue(NotificationsProperty); }
             set { SetValue(NotificationsProperty, value); }
         }
 
@@ -136,6 +136,10 @@ namespace WpfTemplateLib
 
         void Notifications_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
+            if (e.NewItems == null)
+            {
+                return;
+            }
             foreach (var item in e.NewItems)
             {
                 // notification windows management

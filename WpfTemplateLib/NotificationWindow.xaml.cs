@@ -50,10 +50,10 @@ namespace WpfTemplateLib
             _timer.Elapsed += timer_Elapsed;
             Loaded += NotificationWindow_Loaded;
 
+            if (mainWindow != null)
             {
-                var point = new Point(mainWindow.Left, mainWindow.Top);
-                point.Offset(mainWindow.Width, mainWindow.Height);
-                //var corner = transform.Transform(point);
+                var point = mainWindow.PointToScreen(new Point(0, 0));
+                point.Offset(mainWindow.ActualWidth - 23, mainWindow.ActualHeight - 50);
 
                 this.Left = point.X;
                 this.Top = point.Y;
@@ -62,12 +62,17 @@ namespace WpfTemplateLib
             Dispatcher.BeginInvoke(DispatcherPriority.ApplicationIdle, new Action(() =>
             {
                 Visibility = Visibility.Visible;
-                var point = new Point(mainWindow.Left, mainWindow.Top);
-                point.Offset(mainWindow.Width, mainWindow.Height);
-                //var corner = transform.Transform(point);
 
-                this.Left = point.X - this.ActualWidth;
-                this.Top = point.Y - this.ActualHeight;
+
+                if (mainWindow != null)
+                {
+
+                    var point = mainWindow.PointToScreen(new Point(0, 0));
+                    point.Offset(mainWindow.ActualWidth - 23, mainWindow.ActualHeight - 50);
+
+                    this.Left = point.X - this.ActualWidth;
+                    this.Top = point.Y - this.ActualHeight;
+                }
 
                 foreach (var notificationWindow in notificationWindows)
                 {

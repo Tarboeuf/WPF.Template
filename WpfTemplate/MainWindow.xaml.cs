@@ -39,7 +39,8 @@ namespace WpfTemplate
 
         private void AddNotification_OnClick(object sender, RoutedEventArgs e)
         {
-            Notifs.Add(new MyNotifDC{Text = DateTime.Now.ToLongTimeString()});
+            Notification.AddNotification(DateTime.Now.ToLongTimeString());
+            //Notifs.Add(new MyNotifDC{Text = DateTime.Now.ToLongTimeString()});
         }
     }
 

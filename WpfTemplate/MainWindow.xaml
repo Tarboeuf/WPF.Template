@@ -7,11 +7,11 @@
     <Grid>
         <DockPanel>
             <wpfTemplateLib:TaSlider DockPanel.Dock="Top" Margin="10" Value="5"   />
-            <wpfTemplateLib:Notification Notifications="{Binding Notifs}" NotificationTime="2000" >
+            <wpfTemplateLib:Notification Name="Notification" NotificationTime="2000" >
                 <wpfTemplateLib:Notification.NotificationTemplate>
-                    <DataTemplate DataType="wpfTemplate:MyNotifDC">
+                    <DataTemplate>
                         <Border BorderBrush="WhiteSmoke" Background="DarkGray" BorderThickness="2" CornerRadius="3">
-                            <Label Content="{Binding Text}" Margin="20" />
+                            <TextBlock Text="{Binding .}"></TextBlock>
                         </Border>
                     </DataTemplate>
                 </wpfTemplateLib:Notification.NotificationTemplate>
